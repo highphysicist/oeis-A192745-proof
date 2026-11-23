@@ -1,6 +1,6 @@
 # OEIS A192745 — proof of Mathar's recurrence
 
-**Status:** Mathematical proof complete. The main recurrence has been Lean-verified in Colab; the polynomial-evaluation bridge is a **compilation candidate**, not yet kernel-verified; compile it in Lean 4 + Mathlib before claiming formal verification. An explicit `modByMonic` identity is not yet formalized.
+**Status:** The final `A192745_cast_v3.lean` was reported to compile successfully in Colab on November 23, 2026, including `fibonacci_factorial_step`, `mathar_recurrence`, and `polynomial_evaluation`. The axiom reports contained no `sorryAx`. An explicit `modByMonic` identity is not yet formalized.
 
 ## The conjecture
 
@@ -35,7 +35,7 @@ This establishes the conjecture for every `n >= 3`.
 
 From a Lean 4 / Mathlib project:
 
-    lake env lean A192745.lean
+    lake env lean A192745_cast_v3.lean
 
 Check that compilation exits with code 0 and `#print axioms` reports no `sorryAx`.
 
